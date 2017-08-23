@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub's Black Navbar to White
 // @namespace    https://victorli.nl
-// @version      1.2
+// @version      1.3
 // @description  Change GitHub's black navbar back to the original white
 // @author       Victor Li
 // @match        https://github.com/*
@@ -13,15 +13,15 @@
 /*jshint multistr: true */
 
 GM_addStyle('\
-.header {\
+.Header {\
 	background-color: #f5f5f5;\
 	border-bottom: 1px solid #e5e5e5;\
 }\
 \
-.header-navlink {\
+.HeaderNavlink {\
 	color: #555;\
 }\
-.header-navlink:hover {\
+.HeaderNavlink:hover {\
     color: #4078c0;\
 }\
 .header-logo-invertocat {\
@@ -36,16 +36,16 @@ GM_addStyle('\
 .header-logo-wordmark:hover {\
     color: #4078c0;\
 }\
-.header-navlink:hover .dropdown-caret, .header-navlink:focus .dropdown-caret {\
+.HeaderNavlink:hover .dropdown-caret, .HeaderNavlink:focus .dropdown-caret {\
     border-top-color: #4078c0;\
 }\
-.header-navlink:hover .octicon-plus, .header-navlink:focus .octicon-plus {\
+.HeaderNavlink:hover .octicon-plus, .HeaderNavlink:focus .octicon-plus {\
     border-top-color: #4078c0;\
 }\
-.header-navlink:hover, .header-navlink:focus {\
+.HeaderNavlink:hover, .HeaderNavlink:focus {\
     color: #4078c0;\
 }\
-.header .header-search-wrapper {\
+.Header .header-search-wrapper {\
     min-height: 0;\
     font-size: 14px;\
     color: #333;\
@@ -53,26 +53,35 @@ GM_addStyle('\
     border: 1px solid #ddd;\
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.075);\
 }\
+.Header .header-search-wrapper.focus {\
+    background-color: #fff;\
+}\
 .header-search-input::placeholder {\
     color: #333;\
 }\
-.header .header-search-input::placeholder {\
+.Header .header-search-input::placeholder {\
     color: #999;\
 }\
-.header .header-search-input::-webkit-input-placeholder {\
+.Header .header-search-input::-webkit-input-placeholder {\
     color: #999;\
 }\
-.header .header-search-scope {\
+.Header .header-search-scope {\
     font-size: 12px;\
     line-height: 20px;\
     color: #767676;\
     border-right-color: #eee;\
 }\
-.header .header-search-wrapper.focus .header-search-scope {\
+.Header .header-search-wrapper.focus .header-search-scope {\
     color: #4078c0;\
     border-right-color: #c6d7ec;\
 }\
 .notification-indicator .mail-status {\
     border: 2px solid #f3f3f3;\
+}\
+.notification-indicator {\
+    color: #555;\
+}\
+.HeaderNavlink.selected {\
+    color: #555;\
 }\
 ');
